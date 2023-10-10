@@ -84,3 +84,9 @@ You must also also test the Spinner component in this module:
 ## MVP Short Explanation
 
 ❗ ALL TESTS MUST PASS
+
+toke eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZvbyIsInJvbGUiOiJMZWFybmVyIiwic2Nob29sIjoiQmxvb210ZWNoIiwiaWF0IjoxNjk2Nzg2MzM4LCJleHAiOjE2OTY3ODk5Mzh9.Tm--pzNwPTK1fmhHcO0jyslZIgOgQ-eSTwhz8-TZIkY
+{
+    "message": "Welcome back, foo!",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZvbyIsInJvbGUiOiJMZWFybmVyIiwic2Nob29sIjoiQmxvb210ZWNoIiwiaWF0IjoxNjk2Nzg2MzM4LCJleHAiOjE2OTY3ODk5Mzh9.Tm--pzNwPTK1fmhHcO0jyslZIgOgQ-eSTwhz8-TZIkY"
+}
