@@ -13,8 +13,8 @@ export default function ArticleForm(props) {
     // Every time the `currentArticle` prop changes, we should check it for truthiness:
     // if it's truthy, we should set its title, text and topic into the corresponding
     // values of the form. If it's not, we should reset the form back to initial values.
+    console.log('useeffect', currentArticle)
     if (currentArticle) {
-      console.log("editing this article:", currentArticle)
       setValues({
         title: currentArticle.title,
         text: currentArticle.text,
@@ -36,22 +36,26 @@ export default function ArticleForm(props) {
     // We must submit a new post or update an existing one,
     // depending on the truthyness of the `currentArticle` prop.
     if (currentArticle) {
+      console.log("update", currentArticle.article_id)
       updateArticle({
         article_id: currentArticle.article_id,
-        article: {
+        article:
+          {
           title: values.title,
           text: values.text,
           topic: values.topic,
-        }
+          }
       })
+      setValues(initialFormValues)
     } else {
       postArticle({
         title: values.title,
         text: values.text,
         topic: values.topic
       })
-    } 
-    setValues(initialFormValues);
+      setValues(initialFormValues)
+    }
+    
   }
 
   const isDisabled = () => {
