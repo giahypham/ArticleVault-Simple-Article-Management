@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PT from 'prop-types'
+import axios from 'axios'
 
 const initialFormValues = { title: '', text: '', topic: '' }
 
@@ -13,7 +14,6 @@ export default function ArticleForm(props) {
     // Every time the `currentArticle` prop changes, we should check it for truthiness:
     // if it's truthy, we should set its title, text and topic into the corresponding
     // values of the form. If it's not, we should reset the form back to initial values.
-    console.log('useeffect', currentArticle)
     if (currentArticle) {
       setValues({
         title: currentArticle.title,
@@ -36,7 +36,6 @@ export default function ArticleForm(props) {
     // We must submit a new post or update an existing one,
     // depending on the truthyness of the `currentArticle` prop.
     if (currentArticle) {
-      console.log("update", currentArticle.article_id)
       updateArticle({
         article_id: currentArticle.article_id,
         article:
@@ -46,16 +45,16 @@ export default function ArticleForm(props) {
           topic: values.topic,
           }
       })
-      setValues(initialFormValues)
+      
     } else {
       postArticle({
         title: values.title,
         text: values.text,
         topic: values.topic
       })
-      setValues(initialFormValues)
     }
-    
+    setValues(initialFormValues)
+    setCurrentArticleId(null)
   }
 
   const isDisabled = () => {
